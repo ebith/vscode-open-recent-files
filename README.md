@@ -1,6 +1,6 @@
 # Open Recent Files
 
-Open a file from VS Code's Open Recent history with a filterable Quick Pick.
+Open a file from VS Code's Open Recent history with a filterable Quick Pick.  
 The list is ordered by recency and contains files only; folders and workspaces are excluded.
 
 ## Usage
@@ -9,7 +9,7 @@ The list is ordered by recency and contains files only; folders and workspaces a
 2. Type part of a file name or path.
 3. Press Enter to open the selected file in the current window.
 
-No default keybinding is assigned.
+No default keybinding is assigned.  
 To use `Ctrl+R`, add this to your `keybindings.json`:
 
 ```json
@@ -30,8 +30,8 @@ This moves the built-in Open Recent command to `Ctrl+Alt+R`.
 
 ## Notes
 
-- This command mirrors Open Recent's file history.
-  Files opened from the Explorer or Quick Open are not automatically added to that history, so they may not appear here.
+This command mirrors Open Recent's file history.  
+Files opened from the Explorer or Quick Open are not automatically added to that history, so they may not appear here.
 
 ## Development
 
