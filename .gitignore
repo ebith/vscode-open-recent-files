@@ -1,0 +1,7 @@
+node_modules/
+.pnpm-store/
+dist/
+out-test/
+*.vsix
+.vscode-test/
+.tmp-research/

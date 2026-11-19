@@ -1,0 +1,49 @@
+{
+  "name": "open-recent-files",
+  "displayName": "Open Recent Files",
+  "description": "Open a file from VS Code's recent files history with a filterable Quick Pick.",
+  "version": "0.1.0",
+  "publisher": "ebith",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ebith/vscode-open-recent-files"
+  },
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "recent",
+    "files",
+    "quick pick"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:openRecentFiles.open"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "openRecentFiles.open",
+        "title": "Open Recent Files...",
+        "category": "File"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run check-types && pnpm run package",
+    "check-types": "tsc --noEmit",
+    "compile": "pnpm run check-types && esbuild src/extension.ts --bundle --format=cjs --platform=node --target=node22 --outfile=dist/extension.js --external:vscode --sourcemap",
+    "watch": "esbuild src/extension.ts --bundle --format=cjs --platform=node --target=node22 --outfile=dist/extension.js --external:vscode --sourcemap --watch",
+    "package": "esbuild src/extension.ts --bundle --format=cjs --platform=node --target=node22 --outfile=dist/extension.js --external:vscode --minify",
+    "test": "tsc -p tsconfig.test.json && node --test --test-isolation=none out-test/test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/vscode": "1.108.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.9.3"
+  }
+}
